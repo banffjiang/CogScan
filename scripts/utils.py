@@ -12,3 +12,9 @@ def seed_everything(seed=42):
     torch.cuda.manual_seed(seed)
     torch.cuda.manual_seed_all(seed)
     torch.backends.cudnn.deterministic = True
+
+# batch_size = 64
+# epochs = 7
+# lr = 5e-5
+# gamma = 0.7
+# seed = 42
