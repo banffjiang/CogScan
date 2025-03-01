@@ -1,7 +1,8 @@
 import torch
 from torch.utils.data import DataLoader, Dataset, random_split
 from torchvision import datasets, transforms
-
+from utils import seed_everything
+seed_everything(42)
 
 
 
@@ -34,7 +35,7 @@ raw_test_dataset = datasets.CIFAR100(root='./data', train=False, download=True)
 
 train_size = int(0.85 * len(full_train_dataset))
 val_size = len(full_train_dataset) - train_size
-train_dataset_full, val_dataset_full = random_split(full_train_dataset, [train_size, val_size],enerator=torch.Generator().manual_seed(seed))
+train_dataset_full, val_dataset_full = random_split(full_train_dataset, [train_size, val_size],generator=torch.Generator().manual_seed(42))
 
 class TransformDataset(Dataset):
     def __init__(self, dataset, transform):

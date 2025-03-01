@@ -6,7 +6,7 @@ from torch.optim.lr_scheduler import StepLR
 from torchvision import models
 from tqdm.notebook import tqdm
 from preprocessing import train_loader, valid_loader, num_classes
-
+from utils import seed_everything
 seed_everything(42)
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
