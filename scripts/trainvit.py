@@ -18,7 +18,7 @@ num_ftrs = model.heads.head.in_features
 model.heads.head = nn.Linear(num_ftrs, num_classes)
 model = nn.DataParallel(model)
 model.to(device)
-
+nn
 
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=5e-5)
